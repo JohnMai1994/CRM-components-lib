@@ -1,12 +1,12 @@
 import Avatar from "../components/Avatar";
 import React from "react";
-import face from "../asserts/images/face.jpg"
-import  "./story.css"
+import face from "asserts/images/face.jpg"
+import  "stories/story.css"
 
 
 export default {
     title: "Example/Avatar",
-    component: Avatar
+    component: Avatar,
 }
 
 export const Default = () => <Avatar src={face} size={"48px"}/>
