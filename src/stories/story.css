@@ -1,0 +1,7 @@
+.rowElements {
+    display: flex;
+}
+
+.rowElements > * {
+    margin: 20px;
+}
