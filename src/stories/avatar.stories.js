@@ -5,7 +5,7 @@ import  "stories/story.css"
 
 
 export default {
-    title: "Example/Avatar",
+    title: "Component/Avatar",
     component: Avatar,
 }
 
