@@ -5,7 +5,7 @@ import  "stories/story.css"
 
 
 export default {
-    title: "Component/Avatar",
+    title: "UI 组件/Avatar",
     component: Avatar,
 }
 
