@@ -20,7 +20,11 @@ const StyledMenuItem = styled.div`
 `;
 
 const StyledWord = styled.h2`
+  width: 80px;
+  text-align-last: justify;
   color: white;
+  opacity: ${({active}) => (active ? 1: 0.3 )};
+  padding-left: 20px;
   
 
 
