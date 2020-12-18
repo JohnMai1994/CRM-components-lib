@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {activeBar} from "../../utils/mixins";
 import StyleAvatar, {StatusIcon} from "../Avatar/style";
 import {MenuItem} from "./index";
+import Badge from "../Badge";
 
 const StyledMenuItem = styled.div`
   & > a {
@@ -17,6 +18,14 @@ const StyledMenuItem = styled.div`
     ${({active}) => (active ? "" : `&::before, &::after {height: 0}`)}
   }
 `;
+
+const StyledWord = styled.h2`
+  color: white;
+  
+
+
+`
+
 
 const MenuIcon = styled(FontAwesomeIcon)`
   color: white;
@@ -54,4 +63,4 @@ const MenuItems = styled.div`
 `;
 
 export default StyledNavBar
-export {MenuIcon, StyledMenuItem, MenuItems}
+export {MenuIcon, StyledMenuItem, MenuItems, StyledWord}

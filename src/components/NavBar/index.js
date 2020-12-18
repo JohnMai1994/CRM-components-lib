@@ -1,7 +1,7 @@
 import React from 'react';
-import StyleNavBar, {StyledMenuItem, MenuIcon, MenuItems} from "./style";
+import StyleNavBar, {StyledMenuItem, MenuIcon, MenuItems, StyledWord} from "./style";
 import Badge from "../Badge";
-import PropTypes from 'prop-types';
+import PropTypes, {func} from 'prop-types';
 import Avatar from "../Avatar";
 
 import face from "../../asserts/images/face.jpg"
@@ -31,11 +31,26 @@ function MenuItem({icon, active, showBadge,explore,children, ...rest}) {
                 <Badge show={showBadge}>
                     <MenuIcon active={active} icon={icon}/>
                 </Badge>
-                {explore? children: ""}
+
+                {!explore|| children || <Word active={active}>{children}</Word>}
+
             </a>
         </StyledMenuItem>
     )
 }
+
+
+function Word({active, children, ...rest}) {
+
+    return (
+        <StyledWord active={active} {...rest}>
+            {children}
+        </StyledWord>
+
+    )
+
+}
+
 
 
 NavBar.propTypes = {};
