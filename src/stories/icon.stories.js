@@ -11,15 +11,15 @@ export default {
 };
 
 export const Default = () => <Icon icon={LogoIcon} />
-export const CustomerColor = () => <Icon icon={LogoIcon} height={48} width={48}/>
-export const CustomerSize = () => <Icon icon={LogoIcon} color={"red"} />
+export const  CustomerSize= () => <Icon icon={LogoIcon} height={48} width={48}/>
+export const CustomerColor = () => <Icon icon={LogoIcon} color={"red"} />
 
 export const FontAwesome = () => {
     return <FontAwesomeIcon icon ={faCommentDots}/>
 }
 
 export const FontAwesomeColor = () => {
-    return <FontAwesomeIcon icon ={faCommentDots} style={{color: "#ccc"}}/>
+    return <FontAwesomeIcon icon ={faCommentDots} style={{fontSize: "24px",color: "#ccc"}}/>
 }
 
 export const FontAwesomeSizes = () => {

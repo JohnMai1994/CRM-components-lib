@@ -1,9 +1,8 @@
 import React from 'react';
-import StyleBadge from "./style";
+import StyleBadge, {Count} from "./style";
 import PropTypes from 'prop-types';
 
-function Badge
-({
+function Badge({
      children,
      show = false,
      count = 0,
@@ -16,8 +15,9 @@ function Badge
             show={show}
             count={count}
             showZero={showZero}
-            {...rest}>
-            {children || count}
+            {...rest}
+        >
+            {children || <Count>{count}</Count>}
         </StyleBadge>
     );
 }

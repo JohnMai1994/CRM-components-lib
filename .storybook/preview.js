@@ -3,15 +3,7 @@ import {addDecorator, addParameters} from "@storybook/react";
 import {ThemeProvider} from "styled-components";
 import theme from "../src/theme";
 
-
-// export const decorators = [
-//     (Story) => (
-//         <ThemeProvider theme={theme}>
-//             <Story/>
-//         </ThemeProvider>
-//     )
-//
-// ]
+import "../src/stories/story.css"
 
 addDecorator((storyFn) => (
     <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>

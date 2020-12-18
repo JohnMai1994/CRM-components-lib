@@ -1,7 +1,7 @@
 import Avatar from "../components/Avatar";
 import React from "react";
 import face from "asserts/images/face.jpg"
-import  "stories/story.css"
+
 
 
 export default {
