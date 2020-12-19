@@ -50,6 +50,8 @@ const StyledNavBar = styled.nav`
   
   ${StyleAvatar} {
     justify-self: center;
+    align-self: center;
+
   ${StatusIcon} {
    &::before {
    background-color: ${({theme}) => theme.darkPurple};

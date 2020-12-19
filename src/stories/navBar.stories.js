@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import NavBar, {MenuItem} from "../components/NavBar"
 import "stories/story.css"
 import {faCommentDots} from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +12,25 @@ export default {
 export const Default = () => <NavBar/>
 
 export const ExploreDefault = () => <NavBar explore/>
+
+
+export const Explore = () => {
+
+    const [explore, setExplore] = useState(false)
+
+
+    return (
+        <div
+            css={`
+              display: flex;
+              `}
+        >
+            <NavBar explore={explore}/>
+
+            <button style={{height: "30px"}} onClick={() => setExplore(!explore)}>点击我</button>
+        </div>
+    )
+}
 
 export const MenuStory = () => {
     return (
@@ -35,7 +54,7 @@ export const ExploreMenuStory = () => {
               width: 300px;
             `}
         >
-            <MenuItem showBadge explore active  icon={faCommentDots}>聊天信息</MenuItem>
+            <MenuItem showBadge explore active icon={faCommentDots}>聊天信息</MenuItem>
             <MenuItem explore icon={faCommentDots}>聊天信息</MenuItem>
         </div>
     )
