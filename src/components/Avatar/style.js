@@ -1,6 +1,13 @@
 import styled, {css} from "styled-components"
 import {circle} from "../../utils/mixins";
 
+const sizeType = {
+    xs: "3px",
+    s:  "6px",
+    m:  "8px",
+    l:  "12px",
+    xl: "16px",
+}
 
 const circleMixinFunc = (color, size = "8px") => css`
     content: "";
@@ -26,51 +33,16 @@ const StatusIcon = styled.div`
   
   &::before {
    ${({size, statusIconSize}) => {
-    switch (size) {
-        case "xs":
-            statusIconSize = "3px";
-            break;
-        case "s":
-            statusIconSize = "6px";
-            break;
-        case "l":
-            statusIconSize = "12px";
-            break;
-        case "xl":
-            statusIconSize = "16px";
-            break;
-        case "m":
-            statusIconSize = "8px";
-            break;
-        default:
+        statusIconSize = sizeType[size];
+        return circleMixinFunc("#ebf0fa", statusIconSize)
     }
-    return circleMixinFunc("#ebf0fa", statusIconSize)
-}};
+    };
     transform: scale(2);
   }
   
   &::after {
   ${({theme, status, size, statusIconSize}) => {
-    switch (size) {
-        case "xs":
-            statusIconSize = "3px";
-            break;
-        case "s":
-            statusIconSize = "6px";
-            break;
-        case "l":
-            statusIconSize = "12px";
-            break;
-        case "xl":
-            statusIconSize = "16px";
-            break;
-        case "m":
-            statusIconSize = "8px";
-            break;
-        default:
-    }
-
-
+    statusIconSize = sizeType[size];
     if (status === "online") {
         return circleMixinFunc(theme.green, statusIconSize)
     } else if (status === "offline") {
