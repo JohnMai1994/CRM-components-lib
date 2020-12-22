@@ -4,6 +4,7 @@ import  "stories/story.css"
 import {ReactComponent as LogoIcon} from "../asserts/icons/smile.svg"
 import {faCommentDots, faFolder, faStickyNote} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {ReactComponent as Replied} from "../asserts/icons/replied.svg";
 
 export default {
     title: "UI 组件/Icon",
@@ -29,8 +30,10 @@ export const FontAwesomeSizes = () => {
             <FontAwesomeIcon icon ={faFolder} style={{fontSize: "36px"}}/>
             <FontAwesomeIcon icon ={faStickyNote} style={{fontSize: "48px"}}/>
         </div>
-
-
         )
-
 }
+
+export const Test = () => (
+    <Icon width={16} height={16} icon={Replied} color="rgba(41, 47,76,0.3)" opacity={1}
+    />
+)
