@@ -1,5 +1,6 @@
 import React from "react";
 import ChatBubble from "../components/ChatBubble"
+import VoiceMessage from "../components/VoiceMessage";
 import  "stories/story.css"
 
 export default {
@@ -17,5 +18,17 @@ export const FromOther = () => (
 export const FromMine = () => (
     <ChatBubble type="mine" time="昨天 下午16: 26">
         这是一条我自己发送的聊天记录
+    </ChatBubble>
+)
+
+export const VoiceMessageFromMine = ( ) => (
+    <ChatBubble type={"mine"} time={"昨天 下午18：30"}>
+        <VoiceMessage type="mine" time={"01:24"}/>
+    </ChatBubble>
+)
+
+export const VoiceMessageFromOther = () => (
+    <ChatBubble time={"昨天 下午18：30"}>
+        <VoiceMessage time={"01:24"}/>
     </ChatBubble>
 )
