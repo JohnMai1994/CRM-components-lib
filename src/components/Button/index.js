@@ -16,6 +16,7 @@ function Button
             type={type}
             shape={shape}
             size={size }
+            bgColor={bgColor}
             {...rest}
         >
             {children}
@@ -28,7 +29,8 @@ Button.propTypes = {
     children: PropTypes.any,
     type: PropTypes.oneOf(["primary"]),
     shape: PropTypes.oneOf(["circle", "rect"]),
-    size: PropTypes.string
+    size: PropTypes.string,
+    bgColor: PropTypes.string
 };
 
 export default Button;
