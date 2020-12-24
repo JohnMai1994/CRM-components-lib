@@ -1,4 +1,15 @@
-使用到的lib
+### How to See the demo
+- npm install / yarn install
+- npm run storybook
+
+### Demo Picture
+![navbar](./demo/navbar.png)
+![conversation](./demo/conversation.png)
+
+
+
+
+### All Lib Used
 1. storybook -> 官网 https://storybook.js.org/
 2. styled-components
 3. classnames
