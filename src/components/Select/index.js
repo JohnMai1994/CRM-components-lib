@@ -1,17 +1,28 @@
 import React from 'react';
 import StyleSelect from "./style";
 import PropTypes from 'prop-types';
+import StyledSelect from "./style";
+import LabelContainer from "../LabelContainer";
 
-function Select({children, ...rest }) {
-    return (
-        <StyleSelect {...rest}>
+function Select({label, type, children, ...rest }) {
+    const selectWithoutLabel = (
+        <StyledSelect type={type} {...rest}>
             {children}
-        </StyleSelect>
-    );
+        </StyledSelect>
+    )
+
+
+    return label ? (
+        <LabelContainer label={label}>selectWithoutLabel</LabelContainer>
+    ): (
+        selectWithoutLabel
+    )
 }
 
 
 Select.propTypes = {
+
+    type: PropTypes.oneOf(["form"]),
    children: PropTypes.any
 };
 
