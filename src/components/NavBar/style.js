@@ -43,6 +43,7 @@ const StyledNavBar = styled.nav`
   grid-template-rows: 1fr 4fr;
   //width: 100px;
   width: ${({explore}) => (explore ? "300px" : "100px")};
+  transition: 1s;
   
   height: 100vh;
   background-color: ${({theme}) => theme.darkPurple};

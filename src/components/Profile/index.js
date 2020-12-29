@@ -1,5 +1,5 @@
 import React from 'react';
-import StyleProfile, {SocialLinks, CloseIcon, ContactSection,Photo, AlbumTitle, Album, AlbumSection, } from "./style";
+import StyleProfile, {SocialLinks, CloseIcon, ContactSection, Photo, AlbumTitle, Album, AlbumSection,} from "./style";
 import PropTypes, {func} from 'prop-types';
 import Avatar from "../Avatar";
 import Paragraph from "../Paragraph";
@@ -7,27 +7,59 @@ import Emoji from "../Emoji";
 import Icon from "../Icon";
 import Seperator from "../Seperator";
 import Text from "../Text";
-import  face from "../../asserts/images/face.jpg";
-import  photo1 from "../../asserts/images/photo1.jpg";
-import  photo2 from "../../asserts/images/photo2.jpg";
-import  photo3 from "../../asserts/images/photo3.jpg";
+import face from "../../asserts/images/face.jpg";
+import photo1 from "../../asserts/images/photo1.jpg";
+import photo2 from "../../asserts/images/photo2.jpg";
+import photo3 from "../../asserts/images/photo3.jpg";
 import "styled-components/macro"
 import {faWeibo, faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import {ReactComponent as Cross} from "../../asserts/icons/cross.svg";
+import Button from "../Button";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPen} from "@fortawesome/free-solid-svg-icons";
 
-function Profile({children, ...rest }) {
+function Profile(
+    {
+        showEditBtn,
+        showCloseIcon = true,
+        onEdit,
+        status,
+        children,
+        ...rest
+    }) {
     return (
         <StyleProfile {...rest}>
-            <CloseIcon icon={Cross}/>
+            {showCloseIcon && <CloseIcon icon={Cross}/>}
             <Avatar
                 css={`
                 margin: 26px 0;
+                grid-area: 1/1/2/2;
                 `}
                 src={face}
                 size={"160px"}
-                status={"online"}
+                status={status}
                 statusIconSize={"25px"}
             />
+
+            {
+                showEditBtn && (
+                    <Button
+                        size={"52px"}
+                        onClick={onEdit}
+                        css={`
+                          grid-area: 1/1/2/2;
+                          align-self: end;
+                          margin-left: 100px;
+                          z-index: 10;
+                        `}
+                    >
+                        <FontAwesomeIcon
+                            css={`font-size: 24px`}
+                            icon={faPen}
+                        />
+                    </Button>
+                )
+            }
 
             <Paragraph size={"xlange"} css={`margin-bottom: 12px`}>
                 小麦同学
@@ -44,8 +76,8 @@ function Profile({children, ...rest }) {
 
             <SocialLinks>
                 <Icon.Social icon={faWeibo} bgColor={"#F06767"} href={"https://www.weibo.com"}/>
-                <Icon.Social icon={faGithub} bgColor={"black"} />
-                <Icon.Social icon={faLinkedin} bgColor={"#2483c0"} />
+                <Icon.Social icon={faGithub} bgColor={"black"}/>
+                <Icon.Social icon={faLinkedin} bgColor={"#2483c0"}/>
             </SocialLinks>
 
             <Seperator css={`margin: 30px 0`}/>
@@ -61,12 +93,12 @@ function Profile({children, ...rest }) {
             <AlbumSection>
                 <AlbumTitle>
                     <Text type={"secondary"}>相册 (31)</Text>
-                    <a >查看全部</a>
+                    <a>查看全部</a>
                 </AlbumTitle>
                 <Album>
-                    <Photo src={photo1} alt="" />
-                    <Photo src={photo2} alt="" />
-                    <Photo src={photo3} alt="" />
+                    <Photo src={photo1} alt=""/>
+                    <Photo src={photo2} alt=""/>
+                    <Photo src={photo3} alt=""/>
                 </Album>
             </AlbumSection>
 
@@ -78,7 +110,7 @@ function Profile({children, ...rest }) {
 function Description({label, children}) {
     return (
         <Paragraph>
-            <Text type={"secondary"}>{label} :  </Text>
+            <Text type={"secondary"}>{label} : </Text>
             <Text>{children}</Text>
         </Paragraph>
 
@@ -88,7 +120,7 @@ function Description({label, children}) {
 
 
 Profile.propTypes = {
-   children: PropTypes.any
+    children: PropTypes.any
 };
 
 export default Profile;

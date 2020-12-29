@@ -7,4 +7,4 @@ export default {
     components: Profile
 };
 
-export const Default = () => <Profile/>
+export const Default = () => <Profile status={"offline"}/>
