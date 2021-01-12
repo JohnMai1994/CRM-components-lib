@@ -25,9 +25,6 @@ const StyledWord = styled.h2`
   color: white;
   opacity: ${({active}) => (active ? 1: 0.3 )};
   padding-left: 20px;
-  
-
-
 `
 
 

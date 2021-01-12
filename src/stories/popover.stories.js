@@ -21,7 +21,7 @@ export const Default = () => (
             height: "50vh"
         }}
     >
-        <Popover content={"Hello"}>
+        <Popover content={"你好呀"}>
             <Button shape={"rect"}>点我</Button>
         </Popover>
     </div>

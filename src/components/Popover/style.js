@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components"
 
 
-const offsetvariants = {
+const offsetVariants = {
     left: css`transform: translate(-25%, 0)`,
     right: css`transform: translate(25%, 0)`,
     center: css``
@@ -10,14 +10,14 @@ const offsetvariants = {
 const Content = styled.div`
   background: ${({theme}) => theme.background};
   border-radius: 21px;
-  box-shadow: 0px 8px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
   padding: 12px 30px;
-  position: absolute;
   
-
+  
+  position: absolute;
   bottom: calc(100% + 12px);
   
-  ${({offset}) => offset && offsetvariants[offset]};
+  ${({offset}) => offset && offsetVariants[offset]};
   ${({visible}) => !visible && `display: none`};
   
 

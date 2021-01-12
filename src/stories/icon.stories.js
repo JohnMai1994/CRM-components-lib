@@ -34,6 +34,5 @@ export const FontAwesomeSizes = () => {
 }
 
 export const Test = () => (
-    <Icon width={16} height={16} icon={Replied} color="rgba(41, 47,76,0.3)" opacity={1}
-    />
+    <Icon width={16} height={16} icon={Replied} color="red" opacity={0.5} />
 )
