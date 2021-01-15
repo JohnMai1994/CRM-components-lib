@@ -2,6 +2,7 @@ export default {
     primaryColor: "#4F9DDE",
     green: "#34D859",
     red: "#F34848",
+    red2: "rgba(236, 90, 81, 0.8)",
     freedom: "#76D7C4",
     gray: "rgba(24, 28, 47, 0.2)",
     darkPurple: "#292F4C",
@@ -12,6 +13,7 @@ export default {
     gray5: "#D8D8D8",
 
     grayDark: "#181C2F",
+    grayDark2: "rgba(33,33,33,0.58)",
     white: "#EBF5FB",
 
     background: "white",
