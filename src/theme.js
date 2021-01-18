@@ -14,6 +14,8 @@ export default {
 
     grayDark: "#181C2F",
     grayDark2: "rgba(33,33,33,0.58)",
+    gredianGray: "linear-gradient(119.19deg, #FFF 0% #F8F8F8 65.34%, #FFF 100%)",
+
     white: "#EBF5FB",
 
     background: "white",
