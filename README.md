@@ -3,13 +3,7 @@
 - npm run storybook
 
 ### Demo Picture
-![navbar](./demo/navbar.png)
-![messageList](./demo/messageList.png)
-![conversation](./demo/conversation.png)
-![profile](./demo/profile.png)
-
-
-
+![demo](./demo/demo.gif)
 
 ### All Lib Used
 1. storybook -> 官网 https://storybook.js.org/
