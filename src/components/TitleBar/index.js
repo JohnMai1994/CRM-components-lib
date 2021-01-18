@@ -6,11 +6,14 @@ import Paragraph from "../Paragraph";
 import Text from "../Text";
 import Icon from "../Icon";
 import face from "../../asserts/images/face.jpg"
-import {ReactComponent as Call } from "../../asserts/icons/call.svg"
-import {ReactComponent as Camera } from "../../asserts/icons/camera.svg"
+import {ReactComponent as Call} from "../../asserts/icons/call.svg"
+import {ReactComponent as Camera} from "../../asserts/icons/camera.svg"
 import {ReactComponent as Options} from "../../asserts/icons/options.svg"
+import Dropdown from "../Dropdown";
+import {DropdownItem} from "../Dropdown/style";
+import Seperator from "../Seperator";
 
-function TitleBar({children, ...rest }) {
+function TitleBar({children, ...rest}) {
     return (
         <StyleTitleBar {...rest}>
             <Avatar status={"offline"} src={face}/>
@@ -24,7 +27,26 @@ function TitleBar({children, ...rest }) {
             <Actions>
                 <Icon opacity={0.4} icon={Call}/>
                 <Icon opacity={0.4} icon={Camera}/>
-                <Icon opacity={0.4} icon={Options}/>
+
+                <Dropdown
+                    content={
+                        <>
+                            <DropdownItem>
+                                <Paragraph>个人资料</Paragraph>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <Paragraph>关闭会话</Paragraph>
+                            </DropdownItem>
+                            <Seperator/>
+                            <DropdownItem>
+                                <Paragraph type={"danger"}>屏蔽此人</Paragraph>
+                            </DropdownItem>
+                        </>
+                    }
+                >
+                    <Icon opacity={0.3} icon={Options}/>
+                </Dropdown>
+
             </Actions>
         </StyleTitleBar>
     );
@@ -32,7 +54,7 @@ function TitleBar({children, ...rest }) {
 
 
 TitleBar.propTypes = {
-   children: PropTypes.any
+    children: PropTypes.any
 };
 
 export default TitleBar;

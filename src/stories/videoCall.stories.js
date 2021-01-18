@@ -3,7 +3,7 @@ import VideoCall from "../components/VideoCall"
 import  "stories/story.css"
 
 export default {
-    title: "页面/VideoCall",
+    title: "UI 组件/VideoCall",
     components: VideoCall
 };
 
