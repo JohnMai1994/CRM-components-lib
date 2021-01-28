@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import StyleChatApp, {Drawer, Nav, Sidebar, Content} from "./style";
 import PropTypes from 'prop-types';
 import NavBar from "../NavBar";
@@ -10,8 +10,14 @@ import FileList from "../FileList";
 import NoteList from "../NoteList";
 import EditProfile from "../EditProfile";
 import {Route, Switch} from "react-router-dom"
+import Settings from "../Settings";
+import BlockedList from "../BlockedList";
+import VideoCall from "../VideoCall";
 
 function ChatApp({children, ...rest}) {
+    const [showDrawer, setShowDrawer] = useState(false);
+    const [videoCalling, setVideoCalling] = useState(false);
+
     return (
         <StyleChatApp {...rest}>
             <Nav>
@@ -19,8 +25,6 @@ function ChatApp({children, ...rest}) {
             </Nav>
             <Sidebar>
                 <Switch>
-
-
                     <Route exact path="/">
                         <MessageList/>
                     </Route>
@@ -46,10 +50,29 @@ function ChatApp({children, ...rest}) {
                 <MessageList/>
             </Sidebar>
             <Content>
-                <Conversation/>
+                {videoCalling &&
+                <VideoCall onHandOffClicked={() => setVideoCalling(false)}/>}
+
+                <Switch>
+                    <Route exact path={"/settings"}>
+                        <Settings/>
+                    </Route>
+
+                    <Route exact path={"/settings/blocked"}>
+                        <BlockedList/>
+                    </Route>
+
+                    <Route path={"/"}>
+                        <Conversation
+                            onAvatarClick={() => setShowDrawer(true)}
+                            onVideoClick={() => setVideoCalling(true)}
+                        />
+                    </Route>
+                </Switch>
+
             </Content>
-            <Drawer>
-                <Profile/>
+            <Drawer show={showDrawer}>
+                <Profile onCloseClick={() => setShowDrawer(false)}/>
             </Drawer>
         </StyleChatApp>
     );

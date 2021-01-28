@@ -7,10 +7,10 @@ import TitleBar from "../TitleBar";
 import Footer from "../Footer";
 import PropTypes from 'prop-types';
 
-function Conversation({children, ...rest}) {
+function Conversation({onAvatarClick,onVideoClick,  children, ...rest}) {
     return (
         <StyleConversation {...rest}>
-            <TitleBar/>
+            <TitleBar onVideoClick={onVideoClick} onAvatarClick={onAvatarClick}/>
             <Conversations>
                 <ChatBubble time={"昨天 下午14：26"}>
                     Hello 小朋友，你在干什么
