@@ -6,12 +6,41 @@ import Emoji from "../Emoji";
 import TitleBar from "../TitleBar";
 import Footer from "../Footer";
 import PropTypes from 'prop-types';
+import {useSpring} from "react-spring";
 
 function Conversation({onAvatarClick,onVideoClick,  children, ...rest}) {
+    const topBarAnimeProps = useSpring({
+        opacity: 1,
+        transform: "translate3d(0px, 0px, 0px)",
+        from: {opacity: 0, transform: "translate3d(0px, -50px, 0px)"},
+        delay: 300,
+    })
+
+    const convsAnimeProps = useSpring({
+        opacity: 1,
+        transform: "translate3d(0px, 0px, 0px)",
+        from: {opacity: 0, transform: "translate3d(50px, 0px, 0px)"},
+        delay: 300,
+    })
+
+    const footAnimeProps = useSpring({
+        opacity: 1,
+        transform: "translate3d(0px, 0px, 0px)",
+        from: {opacity: 0, transform: "translate3d(0px, 0px, 50px)"},
+        delay: 300,
+    })
+
+
+
+
     return (
         <StyleConversation {...rest}>
-            <TitleBar onVideoClick={onVideoClick} onAvatarClick={onAvatarClick}/>
-            <Conversations>
+            <TitleBar
+                onVideoClick={onVideoClick}
+                onAvatarClick={onAvatarClick}
+                animeProps={topBarAnimeProps}
+            />
+            <Conversations style={convsAnimeProps}>
                 <ChatBubble time={"昨天 下午14：26"}>
                     Hello 小朋友，你在干什么
                 </ChatBubble>
@@ -37,7 +66,7 @@ function Conversation({onAvatarClick,onVideoClick,  children, ...rest}) {
 
             </Conversations>
 
-            <Footer/>
+            <Footer animeProps={footAnimeProps} />
 
 
         </StyleConversation>

@@ -16,3 +16,5 @@
 5. Hygen模板生成器：
 6. svg图片使用，以及 fontawesome使用
 7. theme.js 使用，使用 styled-components中的<ThemeProvider theme={theme}> 包裹App组件那么App中所有组件都可以使用Theme.js
+8. React-Router-DOM
+9. React-spring 生成动画

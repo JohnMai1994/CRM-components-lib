@@ -13,12 +13,12 @@ import {ReactComponent as OptionsIcon} from "../../asserts/icons/options.svg";
 import PropTypes from 'prop-types';
 import {useTheme} from "styled-components";
 
-function Footer({children, ...rest }) {
+function Footer({animeProps, style, children, ...rest }) {
     const [emojiIconActive, setEmojiIconActive] = useState(false)
     const theme = useTheme()
 
     return (
-        <StyleFooter {...rest}>
+        <StyleFooter style={{...style, ...animeProps}} {...rest}>
            <Input
                placeholder={"输入想和对方说的话"}
                prefix={<Icon icon={ClipIcon}/>}
