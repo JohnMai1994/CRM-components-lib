@@ -3,8 +3,12 @@ import StyleFileList, {Files} from "./style";
 import PropTypes from 'prop-types';
 import FilterList from "../FilterList";
 import FileCard from "../FileCard";
+import useStaggeredList from "../../hooks/useStaggeredList";
+import {animated} from "react-spring";
 
-function FileList({children, ...rest }) {
+function FileList({children, ...rest}) {
+    const trailAnimes = useStaggeredList(10)
+
     return (
         <StyleFileList {...rest}>
             <FilterList
@@ -13,7 +17,9 @@ function FileList({children, ...rest }) {
                 <Files>
                     {
                         new Array(10).fill(0).map((_, i) => (
-                            <FileCard key={i}/>
+                            <animated.div key={i} style={trailAnimes[i]}>
+                                <FileCard key={i}/>
+                            </animated.div>
                         ))
                     }
                 </Files>
@@ -25,7 +31,7 @@ function FileList({children, ...rest }) {
 
 
 FileList.propTypes = {
-   children: PropTypes.any
+    children: PropTypes.any
 };
 
 export default FileList;
