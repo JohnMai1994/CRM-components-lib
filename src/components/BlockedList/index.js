@@ -15,6 +15,7 @@ import face from "../../asserts/images/face.jpg";
 import Text from "../Text";
 import "styled-components/macro"
 import {useHistory} from "react-router-dom"
+import blockedData from "../../data/blocked";
 
 function BlockedList({children, ...rest }) {
     const history = useHistory();
@@ -33,12 +34,13 @@ function BlockedList({children, ...rest }) {
             </SettingsMenu>
 
             <FriendList>
-                {new Array(8).fill(0).map((_, i) => {
+                {
+                    blockedData.map((user, i) => {
                     return (
-                        <ClosableAvatar key={i}>
-                            <BlockedAvatar size={"105px"} src={face}/>
+                        <ClosableAvatar key={user.id}>
+                            <BlockedAvatar size={"105px"} src={user.avatar}/>
                             <CloseIcon width={46} height={51} icon={closeCircle}/>
-                            <BlockedName>李浩</BlockedName>
+                            <BlockedName>{user.name}</BlockedName>
                         </ClosableAvatar>
                     )
                 })}

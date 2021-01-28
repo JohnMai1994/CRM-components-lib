@@ -5,6 +5,7 @@ import FilterList from "../FilterList";
 import NoteCard from "../NoteCard";
 import useStaggeredList from "../../hooks/useStaggeredList";
 import {animated} from "react-spring";
+import notesData from "../../data/notes";
 
 function NoteList({children, ...rest}) {
     const trailAnimes = useStaggeredList(10)
@@ -18,9 +19,9 @@ function NoteList({children, ...rest}) {
             >
                 <Notes>
                     {
-                        new Array(10).fill(0).map((_, i) => (
-                            <animated.div key={i} style={trailAnimes[i]}>
-                                <NoteCard key={i}/>
+                        notesData.map((note, i) => (
+                            <animated.div key={note.id} style={trailAnimes[i]}>
+                                <NoteCard key={note.id} note={note}/>
                             </animated.div>
                         ))
                     }

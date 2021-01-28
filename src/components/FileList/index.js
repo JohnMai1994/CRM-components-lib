@@ -5,6 +5,7 @@ import FilterList from "../FilterList";
 import FileCard from "../FileCard";
 import useStaggeredList from "../../hooks/useStaggeredList";
 import {animated} from "react-spring";
+import filesData from "../../data/files";
 
 function FileList({children, ...rest}) {
     const trailAnimes = useStaggeredList(10)
@@ -16,9 +17,9 @@ function FileList({children, ...rest}) {
             >
                 <Files>
                     {
-                        new Array(10).fill(0).map((_, i) => (
-                            <animated.div key={i} style={trailAnimes[i]}>
-                                <FileCard key={i}/>
+                        filesData.map((file, i) => (
+                            <animated.div key={file.id} style={trailAnimes[i]}>
+                                <FileCard key={file.id} file={file}/>
                             </animated.div>
                         ))
                     }
