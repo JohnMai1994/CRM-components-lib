@@ -1,14 +1,11 @@
-### How to See the demo
+### 怎么使用
 - npm install / yarn install
-- 想要看所有组件 If You Want to See All Components:
-    - npm run storybook
-- 只想运行看最终结果 If You Only Want to See the Final Page:
-    - npm run start / yarn start
+- npm run start / yarn start
 
-### Demo Picture
+### Demo GIF 动态图
 ![demo](./demo/demo.gif)
 
-### All Lib Used
+### 全部使用的库
 1. storybook -> 官网 https://storybook.js.org/
 2. styled-components
 3. classnames
