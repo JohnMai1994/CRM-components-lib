@@ -39,7 +39,6 @@ const Checkbox = styled.input.attrs({type: "checkbox"})`
     ::before {
       transform: translateX(20px);
     }
-  
   }
 `;
 
