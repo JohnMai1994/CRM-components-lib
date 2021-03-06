@@ -8,7 +8,7 @@ const Name = styled(Paragraph).attrs({size: "large"})`
 `;
 
 const Intro = styled(Paragraph).attrs({type: "secondary"})`
-grid-area: intro;
+    grid-area: intro;
 `;
 
 const StyledContactCard = styled.div`
